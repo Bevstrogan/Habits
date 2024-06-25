@@ -14,7 +14,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -63,7 +62,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv('NAME'),
+        "NAME": os.getenv("NAME"),
         "USER": os.getenv("POSTGRES_USER"),
         "PASSWORD": os.getenv("PASSWORD"),
         "HOST": os.getenv("HOST"),
@@ -98,7 +97,7 @@ USE_TZ = True
 
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -108,17 +107,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 AUTH_USER_MODEL = "users.User"
 
 ST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES':
-        (
-            'rest_framework_simplejwt.authentication.JWTAuthentication',
-        ),
-    'DEFAULT_PERMISSION_CLASSES':
-        (
-            'rest_framework.permissions.AllowAny',
-        ),
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.AllowAny",),
 }
 
-CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:8000/']
+CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:8000/"]
 CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8000/"]
 CORS_ALLOW_ALL_ORIGINS = False
-
